@@ -1,0 +1,158 @@
+{
+  "login": {
+    "email": "Email",
+    "password": "Passwort",
+    "sign_in": "Einloggen",
+    "forgot_password": "Passwort vergessen",
+    "forgot-enter-email": "Email eingeben",
+    "enter_email": "Email eingeben",
+    "reset_password": "Passwort zurücksetzen",
+    "invalid": "Zugangsdaten ungültig"
+  },
+  "changepassword": {
+    "title": "Passwort ändern",
+    "currentpassword": "Aktuelles Passwort",
+    "password": "Passwort",
+    "repeat": "Wiederholen",
+    "passwordnotmatch": "Passwort stimmt nicht überein",
+    "success": "Das Passwort Wurde Erfolgreich Geändert",
+    "submit": "Einreichen"
+  },
+  "notifications": {
+    "notifications1": "E-Mail-Benachrichtigung (Bestätigung des Termins)",
+    "notifications2": "SMS-Benachrichtigung (Bestätigung des Termins)",
+    "notifications3": "E-Mail-Benachrichtigung (Terminmeldung)",
+    "notifications4": "SMS-Benachrichtigung (Terminmeldung)"
+  },
+  "appointment":{
+    "modalHeader" : "Kunde auswählen",
+    "previous": "Zurück",
+    "today": "Heute",
+    "next": "Vor",
+    "calendar": "Kalendar",
+    "service": "Service",
+    "month": "Monat",
+    "week": "Woche",
+    "day": "Tag",
+    "busytime": "Besetztzeit",
+    "newappointment": "Neuer Termin",
+    "addbusytime": "Besetztzeit hinzufügen",
+    "client": "Kunde",
+    "startsat": "Beginn",
+    "endsat": "Ende",
+    "remove": "Entfernen",
+    "busy": "besetzt",
+    "save": "Speichern", 
+    "delete": "Entfernen",
+    "saveremove": "Aktionen",
+    "addclient": "Kunde hinzufügen",
+    "dayclicktitle": "Klicken Sie auf einen Tag um einen Termin hinzufügen zu können.",
+    "dayshowtitle": "Ausgewählter Tag:",
+    "selectclient": "Kunde auswählen"
+
+  },
+  "general": {
+    
+    "menu": {
+      "clients":"Kunden",
+      "companies": "Anbieter",
+      "categories": "Kategorien",
+      "admin": "Admins",
+      "dashboard": "Dashboard",
+      "settings": "Einstellungen",
+      "appointments": "Termine"
+      
+    },
+    "table":{
+      "notificationsettings": "Notifikationen Einstellungen",
+      "clienttable": "Kunden Übersicht",
+      "calendartable": "Kalendar",
+      "servicetable": "Services",
+      "openinghourstable": "Öffnungszeiten",
+      "companytable": "Anbieter Übersicht",
+      "categorytable": "Kategorien",
+      "admintable": "Administratoren"
+      
+    }, 
+    "created_with": "Erstellt mit"
+  },
+  "other":{
+    "fax": "Fax",
+    "phoneNumber": "Telefon",
+    "Zip code": "PLZ",
+    "City": "Ort",
+    "Street": "Straße",
+    "Country": "Land",
+    "Category": "Kategorie",
+    "Status": "Aktiv",
+    "Sorry": "Sorry",
+    "Success": "Erfoglreich",
+    "Warning": "Achtung",
+    "day": "Tag",
+    "from": "Von",
+    "to": "nach",
+    "save": "Speichern"
+    
+  },
+  "date":{
+    "mon": "Mo",
+    "tue": "Di",
+    "wed": "Mi",
+    "thr": "Do",
+    "frd": "Fr",
+    "sat": "Sa",
+    "sun": "So"
+  },
+  "message":{
+    "info": "Info!",
+    "success": "Erfoglreich!",
+    "sorry": "Sorry!",
+    "changepasswordsuccess": "Das Passwort Wurde Erfolgreich Geändert",
+    "changepassworderror": "Bitte überprüfen Sie das Passwort",
+    "createconfirm": "Wollen Sie tatsächlich einen neuen Eintrag anlegen?",
+    "updateconfirm": "Wollen Sie tatsächlich den Eintrag ändern?",
+    "clientcreatemessage": "Neuer Kunde wurde angelegt.",
+    "clientupdatemessage": "Kundendaten wurden angepasst.",
+    "clientcreatefailed": "Email ungültig. Bitte nutzen Sie eine andere.",
+    "selectcompanyname": "Bitte Firmennamen auswählen.",
+    "emailcorrectly": "Bitte gültige Email eingeben.",
+    "inputemail": "Bitte Email eingeben.",
+    "inputlastname": "Bitte Nachnamen eingeben.",
+    "inputfirstname": "Bitte Vornamen eingeben.",
+    "clientremove": "Kunde wurde gelöscht.",
+    "deleteconfirm": "Sich Sie sicher, dass Sie den Eintrag löschen möchten?",
+    "removepermission": "Sie können nur eigene Kunden löschen.",
+    "selectcalendar": "Bitte Kalendar auswählen.",
+    "selectservice": "Bitte Service auswählen.",
+    "selectclient": "Bitte Kunde auswählen.",
+    "appointmentcreated": "Termin wurde erstellt.",
+    "appointmentupdated": "Termin wurde angepasst.",
+    "appointmentremoved": "Termin wurde entfernt.",
+    "addnewappointment": "Termin erstellen:",
+    "calendarremoved": "Kalender wurde entfernt.",
+    "calendarcreated": "Kalender wurde angelegt.",
+    "calendarupdated": "Kalender wurde angepasst.",
+    "serviceremoved": "Service wurde entfernt.",
+    "servicecreated": "Service wurde angelegt.",
+    "serviceupdated": "Service wurde angepasst.",
+    "inputnumberprice": "Bitte Preis angeben.",
+    "inputnumberduration": "Bitte Service Dauer angeben.",
+    "openinghoursupdated": "Öffnungszeiten wurden angepasst.",
+    "adminremoved": "Admin wurde entfernt.",
+    "inputusername": "Bitte Username eingeben.",
+    "admincreated": "Admin wurde angelegt.",
+    "adminupdated": "Admin wurde angepasst.",
+    "categoryremoved": "Kategorie wurde entfernt.",
+    "categorycreated": "Kategorie wurde angelegt.",
+    "categoryupdated": "Kategorie wurde angepasst.",
+    "companyremoved": "Anbieter wurde entfernt.",
+    "inputname": "Bitte Name angeben.",
+    "inputcompanyname": "Bitte Firmennamen angeben.",
+    "companycreated": "Anbieter wurde erstellt.",
+    "companyupdated": "Anbieter wurde angepasst.",
+    "shortcutkeyexists": "Tastenkombination bereits vergeben"
+
+  }
+
+  
+}

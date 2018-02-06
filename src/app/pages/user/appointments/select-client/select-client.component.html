@@ -1,0 +1,16 @@
+
+<div class="modal-content" >
+  <div class="modal-header">
+    <h4 class="modal-title" translate>{{'appointment.modalHeader' }}</h4>
+    <button class="close" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body"  >
+    <input #search class="search" type="text" placeholder="Search..." (keydown.enter)="onSearch(search.value)">
+    <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)" (userRowSelect)="selectClient($event)" (filterFunction)="onFilter($event)"></ng2-smart-table>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-success confirm-btn" (click)="Select()" translate>{{'appointment.selectclient' }}</button>
+  </div>
+</div>

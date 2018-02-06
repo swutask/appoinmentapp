@@ -1,0 +1,21 @@
+{
+	"version":"1.0",
+	"apiUrl":"/api",
+	"urlWithVersionNumber":false,
+	"salt":"",
+	"algorithm":"",
+	"stripe":"",
+	"serviceCharge":0.49,
+	"perMBRate":0.01,
+	"parseAppID":"apptoken1234",
+	"parseMasterKey":"",
+	"parseRESTKey":"",
+	"carrierJsonUrl": "",
+	"locationJsonUrl": "",
+	"googleMapApiKey":"",
+	"conversionFactor": 1048576,
+	"dashboardUrl":{
+		"production": "https://apntwebapp.herokuapp.com",
+		"staging-local": "http://localhost:4200"
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"version":"1.0",
+	"apiUrl":"/dashboard",
+	"urlWithVersionNumber":false,
+	"salt":"Sh#!_Are$G_^",        
+	"algorithm":"aes-256-ctr"
+}

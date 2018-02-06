@@ -1,0 +1,74 @@
+{
+  "login": {
+    "email": "Email_de",
+    "password": "Password_de",
+    "sign_in": "Sign in_de",
+    "forgot_password": "Forgot password? de",
+    "forgot-enter-email": "Enter Email de",
+    "enter_email": "Enter Email de",
+    "reset_password": "Reset Password",
+    "invalid": "invalid de"
+  },
+  "appointment":{
+    "modalHeader" : "Select Client de",
+    "previous": "Previous_de",
+    "today": "Today_de",
+    "next": "Next_de",
+    "calendar": "Calendar_de",
+    "service": "Service_de",
+    "month": "Month_de",
+    "week": "week_de",
+    "day": "day_de",
+    "busytime": "Busy Time DE",
+    "newappointment": "New Appointment DE",
+    "addbusytime": "Add Busy Time DE",
+    "client": "Client DE",
+    "startsat": "Starts at DE",
+    "endsat": "Ends at DE",
+    "remove": "Remove DE",
+    "busy": "Busy DE",
+    "save": "Save DE", 
+    "delete": "Delete DE",
+    "saveremove": "Save & Remove DE",
+    "addclient": "Add Client DE",
+    "dayclicktitle": "Click on a day on the view(DE).",
+    "dayshowtitle": "You clicked on this day(DE):"
+  },
+  "general": {
+    
+    "menu": {
+      "clients":"Clients_de",
+      "companies": "Companies_de",
+      "categories": "Categories_de",
+      "admin": "Admin_de",
+      "dashboard": "Dashboard",
+      "settings": "Settings_de",
+      "appointments": "Appointments_de"
+      
+    },
+    "table":{
+      "clienttable": "CLIENT TABLE de",
+      "calendartable": "CALENDAR TABLE de",
+      "servicetable": "SERVICE TABELE de",
+      "openinghourstable": "OPENING HOURS TABLE de",
+      "companytable": "COMPANY TABLE de",
+      "categorytable": "CATEGORY TABLE de",
+      "admintable": "ADMIN TABLE de"
+      
+    }, 
+    "created_with": "Created with"
+  },
+  "other":{
+    "fax": "fax de",
+    "phoneNumber": "PhoneNumber de",
+    "Zip code": "Zip Code de",
+    "City": "City de",
+    "Street": "Street de",
+    "Country": "Country de",
+    "Category": "Category de",
+    "Status": "Status de",
+    "Sorry": "Sorry de",
+    "Success": "Success de",
+    "Warning": "Warning de"
+  }
+}

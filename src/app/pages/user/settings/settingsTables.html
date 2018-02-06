@@ -1,0 +1,185 @@
+<simple-notifications [options]="options"></simple-notifications>
+<div *ngIf="loading == true" class="loader"></div>
+<div class="widgets text-center" *ngIf="loading == false">
+    <div class="row">
+        <div class = 'col-md-5'>
+            <div class = 'col-md-12'>
+                <ba-card title="{{'general.table.calendartable' | translate}}" baCardClass="with-scroll" class="data-table-container">
+                    <div class="row">
+                        <ng2-smart-table [settings]="settings_calendar" [source]="source_calendar" (deleteConfirm)="removeCalendar($event)" 
+                        (editConfirm)="onEditConfirm_Calendar($event)" (createConfirm)="onCreateConfirm_Calendar($event)" ></ng2-smart-table>
+                    </div>
+                </ba-card>
+            </div>
+            <div class = 'col-md-12'>
+                <ba-card title="{{'general.table.notificationsettings' | translate}}" baCardClass="with-scroll" class="data-table-container">
+                      <div class="panel panel-default">
+
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>{{'notifications.notifications1' | translate}}</td>
+                                    <td>
+                                        <input type="checkbox" [checked]="appoconfemail" (change)="appoconfemail=!appoconfemail" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>{{'notifications.notifications2' | translate}}</td>
+                                    <td>
+                                        <input type="checkbox" [checked]="appoconfsms" (change)="appoconfsms=!appoconfsms" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>{{'notifications.notifications3' | translate}}</td>
+                                    <td>
+                                        <input type="checkbox" [checked]="apponotemail" (change)="apponotemail=!apponotemail" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>{{'notifications.notifications4' | translate}}</td>
+                                    <td>
+                                        <input type="checkbox" [checked]="apponotsms" (change)="apponotsms=!apponotsms" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <td colspan="2">
+                                    <input type="button" class="btn btn-primary" value="Save" (click)="saveNotificationreference()" />
+                                </td>
+                            </tfoot>
+                        </table>
+                    </div>
+                </ba-card>
+        </div>
+    </div>
+        <div class = 'col-md-7'>
+              <!--<div class="panel panel-default">
+                <table class="table table-striped" [mfData]="services | dataFilter : filterQuery" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+                    <thead>
+                        <tr>
+                            <th style="width: 10%">
+                                <mfDefaultSorter by="name">ID</mfDefaultSorter>
+                            </th>
+                            <th style="width: 30%">
+                                <mfDefaultSorter by="name">Description</mfDefaultSorter>
+                            </th>
+                            <th style="width: 10%">
+                                <mfDefaultSorter by="name">Price</mfDefaultSorter>
+                            </th>
+                            <th style="width: 10%">
+                                <mfDefaultSorter by="name">Duration (min)</mfDefaultSorter>
+                            </th>
+                            <th style="width: 10%">
+                                <mfDefaultSorter by="name">Status</mfDefaultSorter>
+                            </th>
+                            <th style="width: 20%">
+                                <mfDefaultSorter by="name">Action</mfDefaultSorter>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of services; let i = index">
+                            
+                            <td>{{i+1}}</td>
+                            <td>{{item.description}}</td>
+                            <td>{{item.price}}</td>
+                            <td>{{item.duration}}</td>
+                            <td *ngIf="item.status" >Active</td>
+                            <td *ngIf="!item.status">DeActive</td>
+                            <td class = "text-center">
+                                <button (click)="editServices(item._id)" class="btn btn-success btn-icon"><i class="icon ion-edit"></i></button>
+                                <button (click)="deleteServices(item._id)" class="btn btn-danger btn-icon"><i class="ion-trash-a"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="6">
+                                <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <button type="button" class="btn btn-primary btn-with-icon" style="margin-left:75%;margin-bottom:10px;" (click)="addServices()"><i class="ion-person-add"></i>Add Service</button>
+            </div>-->
+
+            <div class="widgets">
+                <div class="row">
+                    <ba-card title="{{'general.table.servicetable' | translate}}" baCardClass="with-scroll" class="data-table-container">
+                            <div class="row">
+                                <ng2-smart-table [settings]="settings_service" [source]="source_service" (deleteConfirm)="removeService($event)" 
+                                (editConfirm)="onEditConfirm_Service($event)" (createConfirm)="onCreateConfirm_Service($event)" ></ng2-smart-table>
+                            </div>
+                    </ba-card>
+                </div>
+            </div>
+            <div class = 'col-md-6 pull-left' >
+                <ba-card title="{{'general.table.openinghourstable' | translate}}" baCardClass="with-scroll" class="data-table-container">
+                      <div class="panel panel-default">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                   
+                                    <th style="width: 14%" translate>
+                                        {{'other.day'}}
+                                    </th>
+                                    <th style="width: 14%" translate>
+                                       {{'other.from'}}
+                                    </th>
+                                    <th style="width: 14%" translate>
+                                         {{'other.to'}}
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr >
+                                    <td translate>{{'date.mon'}}</td>
+                                        <td><input type="time" class="form-control input-sm" [value]="this.openingHours.monfrom" (input)="this.openingHours.monfrom = $event.target.value" /></td>
+                                        <td><input type="time" class="form-control input-sm" [value]="openingHours.monto" (input)="this.openingHours.monto = $event.target.value" /></td>
+                                    </tr>
+                                <tr >
+                                    <td translate>{{'date.tue'}}</td>
+                                    <td><input type="time" class="form-control input-sm" [value]=openingHours.tuefrom (input)="this.openingHours.tuefrom = $event.target.value" /></td>
+                                    <td><input type="time" class="form-control input-sm" [value]=openingHours.tueto (input)="this.openingHours.tueto = $event.target.value" /></td>
+                                </tr>
+                                <tr >
+                                    <td translate>{{'date.wed'}}</td>
+                                    <td><input type="time" class="form-control input-sm" [value]=openingHours.wedfrom (input)="this.openingHours.wedfrom = $event.target.value" /></td>
+                                    <td><input type="time" class="form-control input-sm" [value]=openingHours.wedto (input)="this.openingHours.wedto = $event.target.value" /></td>
+                                </tr>
+                                <tr >
+                                    <td translate>{{'date.thr'}}</td>
+                                    <td><input type="time" class="form-control input-sm" [value]=openingHours.thufrom (input)="this.openingHours.thufrom = $event.target.value" /></td>
+                                    <td><input type="time" class="form-control input-sm" [value]=openingHours.thuto (input)="this.openingHours.thuto = $event.target.value" /></td>
+                                </tr>
+                                <tr >
+                                    <td translate>{{'date.frd'}}</td>
+                                    <td><input type="time" class="form-control input-sm" [value]=openingHours.frifrom (input)="this.openingHours.frifrom = $event.target.value" /></td>
+                                    <td><input type="time" class="form-control input-sm" [value]=openingHours.frito (input)="this.openingHours.frito = $event.target.value" /></td>
+                                </tr>
+                                <tr >
+                                    <td translate>{{'date.sat'}}</td>
+                                    <td><input type="time" class="form-control input-sm" [value]=openingHours.satfrom (input)="this.openingHours.satfrom = $event.target.value" /></td>
+                                    <td><input type="time" class="form-control input-sm" [value]=openingHours.satto (input)="this.openingHours.satto = $event.target.value" /></td>
+                                </tr>
+                                <tr >
+                                    <td translate>{{'date.sun'}}</td>
+                                    <td><input type="time" class="form-control input-sm" [value]=openingHours.sunfrom (input)="this.openingHours.sunfrom = $event.target.value" /></td>
+                                    <td><input type="time" class="form-control input-sm" [value]=openingHours.sunto (input)="this.openingHours.sunto = $event.target.value" /></td>
+                                </tr>
+                            </tbody>
+                            
+                        </table>
+                        
+                    </div>
+                    <button type="button" class="btn btn-primary btn-with-icon pull-right" style="margin-top: 20px"  (click)="saveOpeiningHours()" translate><i class="ion-save"></i>{{'other.save'}}</button>
+                </ba-card>
+            </div>
+            
+        </div>
+        
+
+    </div>
+    
+</div>

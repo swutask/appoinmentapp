@@ -1,0 +1,28 @@
+@import "../../../../../theme/sass/conf/conf";
+
+.modal-buttons .btn {
+  margin-right: 20px;
+}
+
+.modal-content {
+  color: white;
+  background-color: #5491cb;
+}
+
+.checkbox {
+  display: inline-block;
+  margin-bottom: -12px;
+  margin-left: 12px;
+}
+
+div.category {
+  display: inherit;
+  
+  select {
+    margin-left: 11px;
+  }
+
+  label {
+    padding: 5px 0px;
+  }
+}

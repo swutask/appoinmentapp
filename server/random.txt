@@ -1,0 +1,20 @@
+X-ShareG-Authorization							method.request.header.X-ShareG-Authorization
+X-Verify-Credentials-Authorization				method.request.header.X-Verify-Credentials-Authorization
+X-Auth-Service-Provider							method.request.header.X-Auth-Service-Provider
+
+
+application/json
+
+2\d{2}
+4\d{2}
+5\d{2}
+
+https://${stageVariables.url}/api/me/
+
+
+https://${stageVariables.url}
+ShareG device_id="65d38a5b-3786-4b34-b9f1-d59f52c7d273" app_id="565c2f3aadb0e0a5bf140efc" app_secret="83f3fb4953eb4018bb7b1345954a8390"
+
+
+
+method.request.path.stripeCardID

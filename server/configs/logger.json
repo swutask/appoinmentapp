@@ -1,0 +1,7 @@
+{
+	"dumpLogs": false,
+	"folderPath": "/logs",
+	"fileName": "shareg-%DATE%.log",
+	"frequency": "daily",
+	"verbose": false 
+}

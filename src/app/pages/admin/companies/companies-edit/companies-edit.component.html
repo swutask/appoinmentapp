@@ -1,0 +1,74 @@
+<div class="modal-content" >
+  <div class="modal-header">
+    <h4 class="modal-title">{{modalHeader}}</h4>
+    <button class="close" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" >
+    <form>
+      <div class="form-group">
+        <label for="companyname">Company Name</label>
+        <input type="text" [(ngModel)] = 'modalData.name' name = 'companyname' class="form-control" id="companyname" placeholder="Company Name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" [(ngModel)] = 'modalData.email' name = 'email' class="form-control" id="email" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <label for="street">Street</label>
+        <input type="text" [(ngModel)] = 'modalData.street' name = 'street' class="form-control" id="street" placeholder="Street">
+      </div>
+
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" [(ngModel)] = 'modalData.city' name = 'city' class="form-control" id="city" placeholder="City">
+      </div>
+      <div class="form-group">
+        <label for="zip">Zip Code</label>
+        <input type="text" [(ngModel)] = 'modalData.zip' name = 'zip' class="form-control" id="zip" placeholder="Zip Code">
+      </div>
+      <div class="form-group">
+        <label for="country">Country</label>
+        <input type="text" [(ngModel)] = 'modalData.country' name = 'country' class="form-control" id="country" placeholder="Country">
+      </div>
+      <div class="form-group">
+        <label for="phone">PhoneNumber</label>
+        <input type="text" [(ngModel)] = 'modalData.phoneNumber' name = 'phone' class="form-control" id="phone" placeholder="Phone Number">
+      </div>
+      <div class="form-group">
+        <label for="fax">FAX</label>
+        <input type="text" [(ngModel)] = 'modalData.fax' name = 'fax' class="form-control" id="fax" placeholder="FAX">
+      </div>
+      <div class="form-group">
+        <label for="latitude">Latitude</label>
+        <input type="text" [(ngModel)] = 'modalData.latitude' name = 'latitude' class="form-control" id="latitude" placeholder="Latitude">
+      </div>
+      <div class="form-group">
+        <label for="longitude">Longitude</label>
+        <input type="text" [(ngModel)] = 'modalData.longitude' name = 'longitude' class="form-control" id="longitude" placeholder="Longitude">
+      </div>
+      
+      
+      <div class="form-group row">
+        
+       <div class="col-sm-6">
+          <label class="checkbox-inline custom-checkbox nowrap">
+            <input type="checkbox" [(ngModel)] = 'modalData.status' [ngModelOptions]="{standalone: true}" >
+            <span>Active</span>
+          </label>
+        </div>
+        
+      <div class = "category col-sm-4 col-sm-offset-2 pull-right">
+        <label for="category">Category</label>
+        <select class="form-control input-sm" [(ngModel)]="modalData.category" name = "category">
+            <option [ngValue]="item.description" *ngFor="let item of categories">{{item.description}}</option>
+        </select>
+      </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-success confirm-btn" (click)="saveModal()">Save changes</button>
+  </div>
+</div>

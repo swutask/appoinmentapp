@@ -1,0 +1,211 @@
+<simple-notifications [options]="options"></simple-notifications>
+<div *ngIf="loading == true" class="loader"></div>
+<ng-template #modalContent let-close="close" *ngIf="loading == false">
+  <div class="modal-header">
+    <h5 class="modal-title">Event action occurred</h5>
+    <button type="button" class="close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div>
+      Action:
+      <pre>{{ modalData?.action }}</pre>
+    </div>
+    <div>
+      Event:
+      <pre>{{ modalData?.event | json }}</pre>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="close()">OK</button>
+  </div>
+</ng-template>
+
+<div class="row text-center" *ngIf="loading == false">
+  <div class="col-md-4">
+    <div class="btn-group">
+      <div
+        class="btn btn-primary"
+        mwlCalendarPreviousView
+        [view]="view"
+        (click) = "prevDayClicked()" id="prevNavMove"
+        [(viewDate)]="viewDate" translate>
+        {{'appointment.previous'}}
+      </div>
+      <div
+        class="btn btn-secondary"
+        mwlCalendarToday
+        (click) = "toDayClicked()"
+        [(viewDate)]="viewDate" translate>
+         {{'appointment.today'}}
+      </div>
+      <div
+        class="btn btn-primary" id="nextNavMove"
+        mwlCalendarNextView
+        (click) = "nextDayClicked()"
+        [view]="view"
+        [(viewDate)]="viewDate" translate>
+         {{'appointment.next'}}
+      </div>
+      <div >
+        <label for="exampleSelect1" style="margin-left:20px" translate>{{'appointment.calendar'}}</label>
+        <select class="form-control1" [ngModel] = "selectedCalender" (ngModelChange)="onChangeCalender($event)">
+            <option *ngFor="let item of calendars" [ngValue]="item._id">{{item.description}}</option>
+        </select>
+      </div>
+      <!--<div >
+        <label class="checkbox-inline" style="margin-top:8px; margin-left:8px">
+              <span>Busy</span> <input type="checkbox" [(ngModel)] = 'busyshow' (change)="showBusy($event)" [ngModelOptions]="{standalone: true}" >
+        </label>
+      </div>-->
+    </div>
+    
+  </div>
+  <div class="col-md-4" *ngIf="loading == false">
+    <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):currentlang }}</h3>
+  </div>
+  <div class="col-md-4" *ngIf="loading == false">
+    <div class="btn-group">
+      <div style="padding-right:20px">
+        <label for="exampleSelect2" style="margin-right:10px;" translate>{{'appointment.service'}}</label>
+        <select class="form-control1" [ngModel] = "selectedService"  (ngModelChange)="onChangeService($event)">
+            <option *ngFor="let item of services" [ngValue]="item._id">{{item.description}}</option>
+        </select>
+      </div>
+      <div
+        class="btn btn-primary"
+        (click)="monthSelected()"
+        [class.active]="view === 'month'" translate>
+        {{'appointment.month'}}
+      </div>
+      <div
+        class="btn btn-primary"
+        (click)="weekSelected()"
+        [class.active]="view === 'week'" translate>
+        {{'appointment.week'}}
+      </div>
+      <div
+        class="btn btn-primary"
+        (click)="daySelected()"
+        [class.active]="view === 'day'" translate>
+        {{'appointment.day'}}
+      </div>
+    </div>
+    
+  </div>
+</div>
+<br><br>
+<div [hidden]="loading == true" [ngSwitch]="view" >
+  <mwl-calendar-month-view
+    *ngSwitchCase="'month'"
+    [viewDate]="viewDate"
+    [events]="events"
+    [refresh]="refresh"
+    [activeDayIsOpen]="activeDayIsOpen"
+    (dayClicked)="dayClicked($event.day)"
+    (eventClicked)="handleEvent('Clicked', $event.event)"
+    (eventTimesChanged)="eventTimesChanged($event)">
+  </mwl-calendar-month-view>
+  <mwl-calendar-week-view
+    *ngSwitchCase="'week'"
+    [viewDate]="viewDate"
+    [events]="events"
+    [refresh]="refresh"
+    (eventClicked)="handleEvent('Clicked', $event.event)"
+    (eventTimesChanged)="eventTimesChanged($event)">
+  </mwl-calendar-week-view>
+  <mwl-calendar-day-view
+    *ngSwitchCase="'day'"
+    [viewDate]="viewDate"
+    [events]="events"
+    [dayStartHour]="startHour"
+    [dayStartMinute]="startMinute"
+    [dayEndHour]="endHour"
+    [dayEndMinute]="endMinute"
+    [refresh]="refresh"
+    mwlDroppable
+    (drop)="eventDropped($event, segment)"
+    (hourSegmentClicked)="handleHourClicked($event,$event)"
+    (eventClicked)="handleEvent('Clicked', $event.event)"
+    (eventTimesChanged)="eventTimesChanged($event)">
+  </mwl-calendar-day-view>
+</div>
+
+<br><br>
+<div class="alert alert-info" *ngIf="loading == false"  translate>
+  {{'appointment.dayclicktitle'}}
+  <strong *ngIf="clickedDate" >{{ clickedDate | date:'medium' }}</strong>
+</div>
+
+<h4 *ngIf="loading == false">
+  {{eventEditTitle}}
+ </h4>
+  <button *ngIf="loading == false"
+    class="btn btn-primary pull-right"
+    (click)="addEvent()" translate>
+    {{'appointment.newappointment'}}
+  </button>
+  <button *ngIf="loading == false"
+    class="btn btn-warning pull-right" style="margin-right:10px"
+    (click)="addBusyTime()" translate="">
+    {{'appointment.busytime'}}
+  </button>
+  <div class="clearfix"></div>
+<br><br>
+<table class="table table-bordered" *ngIf="loading == false">
+
+  <thead >
+    <tr>
+      <!--<th>Calendar & Service</th>-->
+      <th translate>{{'appointment.client'}}</th>
+      <!--<th>Secondary color</th>-->
+      <th translate>{{'appointment.startsat'}}</th>
+      <th translate>{{'appointment.endsat'}}</th>
+      <th translate>{{'appointment.saveremove'}}</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let event of tempEvents; let index = index">
+      <td class="pull-center">
+          <div class="form-group"  *ngIf = "event.title != 'Busy'">
+            <a  class="btn btn-info btn-md" style="padding-left:20px; padding-right:20px" [innerHTML]="event.selectedClientEmail" (click) = "selectClient()"></a>
+          </div>
+          <div class="form-group"  *ngIf = "event.title != 'Busy'">
+            <a  class="btn btn-info btn-md" style="padding-left:20px; padding-right:20px" routerLink="/pages/clients" translate>  {{'appointment.addclient'}}</a>
+          </div>
+          <div class="form-group" *ngIf = "event.title == 'Busy'" style="font-size:20px; color:red; " translate>
+            {{'appointment.busy'}}
+          </div>
+      </td>
+      <td>
+        <mwl-demo-utils-date-time-picker
+          [(date)]="event.start"
+          (dateChange)="startDateChange(event)"
+          placeholder="Not set">
+        </mwl-demo-utils-date-time-picker>
+      </td>
+      <td>
+        <mwl-demo-utils-date-time-picker
+          [(date)]="event.end"
+          placeholder="Not set">
+        </mwl-demo-utils-date-time-picker>
+      </td>
+      <td>
+        <button
+          class="btn btn-success"
+          (click)="saveAppointment(event)" translate>
+          {{'appointment.save'}}
+        </button>
+        
+        <button
+          class="btn btn-danger"
+          (click)="deleteAppointment(event, index)" translate>
+          {{'appointment.delete'}}
+        </button>
+      </td>
+    </tr>
+  </tbody>
+
+</table>

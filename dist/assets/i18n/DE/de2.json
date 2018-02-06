@@ -1,0 +1,136 @@
+{
+  "login": {
+    "email": "Email",
+    "password": "Passwort",
+    "sign_in": "Einloggen",
+    "forgot_password": "Passwort vergessen",
+    "forgot-enter-email": "Email eingeben",
+    "enter_email": "Email eingeben",
+    "reset_password": "Passwort zurücksetzen",
+    "invalid": "Zugangsdaten ungültig"
+  },
+  "appointment":{
+    "modalHeader" : "Kunde auswählen",
+    "previous": "Zurück",
+    "today": "Heute",
+    "next": "Vor",
+    "calendar": "Kalendar",
+    "service": "Service",
+    "month": "Monat",
+    "week": "Woche",
+    "day": "Tag",
+    "busytime": "Besetztzeit",
+    "newappointment": "Neuer Termin",
+    "addbusytime": "Besetztzeit hinzufügen",
+    "client": "Kunde",
+    "startsat": "Beginn",
+    "endsat": "Ende",
+    "remove": "Entfernen",
+    "busy": "besetzt",
+    "save": "Speichern", 
+    "delete": "Entfernen",
+    "saveremove": "Speichern & Enterfernen",
+    "addclient": "Kunde hinzufügen",
+    "dayclicktitle": "Klicken Sie auf einen Tag um einen Termin hinzufügen zu können.",
+    "dayshowtitle": "Ausgewählter Tag:"
+
+  },
+  "general": {
+    
+    "menu": {
+      "clients":"Kunden",
+      "companies": "Anbieter",
+      "categories": "Kategorien",
+      "admin": "Admins",
+      "dashboard": "Dashboard",
+      "settings": "Einstellungen",
+      "appointments": "Termine"
+      
+    },
+    "table":{
+      "clienttable": "Kunden Übersicht",
+      "calendartable": "Kalendar",
+      "servicetable": "Services",
+      "openinghourstable": "Öffnungszeiten",
+      "companytable": "Anbieter Übersicht",
+      "categorytable": "Kategorien",
+      "admintable": "Administratoren"
+      
+    }, 
+    "created_with": "Erstellt mit"
+  },
+  "other":{
+    "fax": "Fax",
+    "phoneNumber": "Telefon",
+    "Zip code": "PLZ",
+    "City": "Ort",
+    "Street": "Straße",
+    "Country": "Land",
+    "Category": "Kategorie",
+    "Status": "Aktiv",
+    "Sorry": "Sorry",
+    "Success": "Erfoglreich",
+    "Warning": "Achtung",
+    "day": "Tag",
+    "from": "Von",
+    "to": "nach"
+  },
+  "date":{
+    "mon": "Mo",
+    "tue": "Di",
+    "wed": "Mi",
+    "thr": "Do",
+    "frd": "Fr",
+    "sat": "Sa",
+    "sun": "So"
+  },
+  "message":{
+    "info": "Info! de",
+    "success": "Success! de",
+    "sorry": "Sorry! de",
+    "createconfirm": "Are you sure you want to Create? de",
+    "updateconfirm": "Are you sure you want to Update? de",
+    "clientcreatemessage": "A New Client Created! de",
+    "clientupdatemessage": "A New Client Updated! de",
+    "clientcreatefailed": "Cannot use the email. please input another email! de",
+    "selectcompanyname": "Please Select Company Name. de",
+    "emailcorrectly": "Please input email correctly de",
+    "inputemail": "Please input email de",
+    "inputlastname": "Please input Last Name de",
+    "inputfirstname": "Please input First Name de",
+    "clientremove": "A Client Removed! de",
+    "deleteconfirm": "Are you sure you want to delete? de",
+    "removepermission": "You can only remove client of your company. de",
+    "selectcalendar": "Please select Calendar de",
+    "selectservice": "Please select Service de",
+    "selectclient": "Please Select Client de",
+    "appointmentcreated": "A New Appointment Created! de",
+    "appointmentupdated": "A Appointment Updated! de",
+    "appointmentremoved": "Appointment Removed! de",
+    "addnewappointment": "Add New Appointment(calendar:) de",
+    "calendarremoved": "A Calendar Removed! de",
+    "calendarcreated": "A New Calendar Created! de",
+    "calendarupdated": "A Calendar Updated! de",
+    "serviceremoved": "A Service Removed! de",
+    "servicecreated": "A New Service Created! de",
+    "serviceupdated": "A Service Updated! de",
+    "inputnumberprice": "please input Number of Price de",
+    "inputnumberduration": "please input Number of Duration de",
+    "openinghoursupdated": "Opening Hour Updated! de",
+    "adminremoved": "A Admin Removed! de",
+    "inputusername": "Please input username de",
+    "admincreated": "A New Admin Created! de",
+    "adminupdated": "A Admin Updated! de",
+    "categoryremoved": "A Category Removed! de",
+    "categorycreated": "A New Category Created! de",
+    "categoryupdated": "A Category Updated! de",
+    "companyremoved": "A Company removed! de",
+    "inputname": "Please input Name de",
+    "inputcompanyname": "Please input company name de",
+    "companycreated": "A New Company Created! de",
+    "companyupdated": "A Company Updated! de"
+
+  }
+
+  
+}

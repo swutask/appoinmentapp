@@ -1,0 +1,34 @@
+<div class="modal-content" >
+  <div class="modal-header">
+    <h4 class="modal-title">{{modalHeader}}</h4>
+    <button class="close" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" [ngSwitch] = 'modalType' >
+    <form>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" [(ngModel)] = 'modalData.description' name = 'description' class="form-control" id="description" placeholder="Description">
+      </div>
+      <div class="form-group">
+        <label for="description">Price</label>
+        <input type="number" [(ngModel)] = 'modalData.price' name = 'price' class="form-control" id="price" placeholder="price">
+      </div>
+      <div class="form-group">
+        <label for="description">Duration</label>
+        <input type="number" [(ngModel)] = 'modalData.duration' name = 'duration' class="form-control" id="duration" placeholder="Duration">
+      </div>
+      
+       <div class="col-sm-6">
+          <label class="checkbox-inline custom-checkbox nowrap">
+            <input type="checkbox" [(ngModel)] = 'modalData.status' [ngModelOptions]="{standalone: true}" >
+            <span>Active</span>
+          </label>
+        </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-success confirm-btn" (click)="saveModal()">Save changes</button>
+  </div>
+</div>

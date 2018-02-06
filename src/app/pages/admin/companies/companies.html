@@ -1,0 +1,13 @@
+<simple-notifications [options]="options"></simple-notifications>
+<div class="widgets" *ngIf="loading == false">
+    <div class="row">
+        <ba-card title="{{'general.table.companytable' | translate}}" baCardClass="with-scroll" class="data-table-container">
+                <div class="row">
+                    <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="removeCompany($event)" 
+                    (editConfirm)="onEditConfirm($event)" (createConfirm)="onCreateConfirm($event)" ></ng2-smart-table>
+                </div>
+        </ba-card>
+    </div>
+</div>
+<div *ngIf="loading == true" class="loader"></div>
+

@@ -1,0 +1,54 @@
+<div class="modal-content" >
+  <div class="modal-header">
+    <h4 class="modal-title">{{modalHeader}}</h4>
+    <button class="close" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" >
+    <form>
+      <div class="form-group">
+        <label for="companyname">Name</label>
+        <input type="text" [(ngModel)] = 'modalData.name' name = 'name' class="form-control" id="name" placeholder="Company Name">
+      </div>
+      <div class="form-group">
+        <label for="street">Street</label>
+        <input type="text" [(ngModel)] = 'modalData.street' name = 'street' class="form-control" id="street" placeholder="Street">
+      </div>
+      <div class="form-group">
+        <label for="zip">Zip Code</label>
+        <input type="number" [(ngModel)] = 'modalData.zip' name = 'zip' class="form-control" id="zip" placeholder="Zip Code">
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" [(ngModel)] = 'modalData.city' name = 'city' class="form-control" id="city" placeholder="City">
+      </div>
+      <div class="form-group">
+        <label for="country">Country</label>
+        <input type="text" [(ngModel)] = 'modalData.country' name = 'country' class="form-control" id="country" placeholder="Country">
+      </div>
+      <div class="form-group">
+        <label for="phone">Mobile</label>
+        <input type="number" [(ngModel)] = 'modalData.mobile' name = 'mobile' class="form-control" id="mobile" placeholder="mobile Number">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" [(ngModel)] = 'modalData.email' name = 'email' class="form-control" id="email" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <label for="password">Email</label>
+        <input type="password" [(ngModel)] = 'modalData.password' name = 'password' class="form-control" id="password" placeholder="password">
+      </div>
+      <div class="form-group row">
+          <label class="checkbox-inline custom-checkbox nowrap">
+            <input *ngIf = "modalData.status" type="checkbox" checked>
+            <input *ngIf = "!modalData.status" type="checkbox">
+            <span>Active</span>
+          </label>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-success confirm-btn" (click)="saveModal()">Save changes</button>
+  </div>
+</div>
