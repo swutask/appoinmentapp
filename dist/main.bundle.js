@@ -15046,7 +15046,7 @@ var Config = (function () {
 
 //static apiUrl = "http://localhost:3000/api";
 
-Config.apiUrl = "http://angular.ourdemoapp.com:3000/api";
+Config.apiUrl = "https://appoinmentapp-backend.herokuapp.com/api";
 
 Config.apptoken = null;
 
