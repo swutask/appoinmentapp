@@ -15,7 +15,7 @@
   "scripts": {
     "heroku-prebuild": "npm install -g http-server",
     "heroku-postbuild": "npm run build",
-    "start": "http-server dist/",
+    "start": "http-server dist/ && node server/app.js",
     "ng": "ng"
   },
   "engines": {
